@@ -82,6 +82,7 @@
 }
           </code>
         </pre>
+
     </div>
   </section>
 
@@ -111,31 +112,33 @@ export default {
 
 <style scoped lang="scss">
 .title {
-  margin-left: 40px;
+  margin-left: 20px;
   margin-bottom: 20px;
   font-weight: 600;
   font-size: 36px;
 }
 
 .tips {
-  margin-left: 40px;
+  margin-left: 20px;
 
   > p {
     font-size: 18px;
     color: #5e6d82;
     line-height: 1.5em;
   }
-} .top {
+}
+
+.top {
   display: flex;
   align-items: center;
   padding: 20px 20px 10px 0;
-  margin-left: 40px;
+  margin-left: 20px;
   margin-top: 20px;
 }
+
 .section1 {
   border: 1px solid #ebebeb;
-  margin: 40px;
-
+  margin: 20px;
 
 
   > .mid {
@@ -152,7 +155,6 @@ export default {
     padding: 15px;
     display: flex;
     align-items: center;
-    border-top: 1px solid #ebebeb;
     border-top: 1px solid #ebebeb;
 
     > .button {
@@ -176,9 +178,7 @@ export default {
 
   > .code {
     height: 0;
-    width: 100%;
     transition: all .3s;
-    overflow: hidden;
 
     > .description {
       display: none;
@@ -202,7 +202,9 @@ export default {
     > pre {
       > .hljs {
         display: none;
+
       }
+
     }
 
     &.show, &.show1 {
@@ -216,9 +218,10 @@ export default {
         //line-height: 1.1;
         //font-family: Consolas, "Courier New", Courier, monospace;
         //margin: 0;
+
         > .hljs {
           display: block;
-          overflow-x: auto;
+          overflow: auto;
           padding: 10px 20px;
           background: #fff;
 
@@ -240,5 +243,6 @@ export default {
       }
     }
   }
+
 }
 </style>

@@ -11,7 +11,6 @@
 
 
 <script>
-import {ref} from "vue";
 
 export default {
   props: {
@@ -31,9 +30,8 @@ export default {
     const toggle = () => {
       context.emit('update:value', !props.value)
     }
-    const activeColor = props.activeColor
-    const noActiveColor = props.noActiveColor
-    return {toggle, activeColor, noActiveColor}
+
+    return {toggle}
   }
 }
 </script>
@@ -59,10 +57,12 @@ button {
     border-radius: calc(#{$h2} / 2);
     transition: all .3s;
   }
+
   &:hover {
     cursor: pointer;
 
   }
+
   &.checked {
     > span {
       left: calc(100% - 20px);

@@ -94,8 +94,9 @@ aside {
     }
   }
 
-  main {
-    overflow: auto;
-  }
+}
+
+main {
+  overflow-x: auto;
 }
 </style>
