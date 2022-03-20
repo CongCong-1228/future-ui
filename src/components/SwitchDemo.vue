@@ -6,7 +6,7 @@
   <section class="section1">
 
     <div class="mid">
-      <Switch v-model:value="value"
+      <futureSwitch v-model:value="value"
               activeColor="#409eff"
               noActiveColor="gray"
       />
@@ -24,7 +24,7 @@
           class="hljs-name">Switch</span><span class="hljs-attr">v-model:value</span>=<span
           class="hljs-string">"value"</span><span class="hljs-attr">active-color</span>=<span
           class="hljs-string">"blue"</span><span class="hljs-attr">noActiveColor</span>=<span
-          class="hljs-string">"blue"</span>/&gt;</span><span class="hljs-tag">&lt;<span
+          class="hljs-string">"gray"</span>/&gt;</span><span class="hljs-tag">&lt;<span
           class="hljs-name">template</span>/&gt; </span>
 
 <span class="hljs-tag">&lt;<span class="hljs-name">script</span></span> <span class="hljs-tag"><span class="hljs-name">lang</span>=<span
@@ -48,7 +48,7 @@
   <section class="section1">
 
     <div class="mid">
-      <Switch v-model:value="value2"
+      <futureSwitch v-model:value="value2"
               activeColor="#409eff"
               noActiveColor="gray"
               disabled
@@ -90,7 +90,7 @@
 
 
 <script lang="ts">
-import Switch from '../libs/Switch.vue'
+import futureSwitch from '../libs/Switch.vue'
 import {ref} from "vue";
 
 export default {
@@ -106,7 +106,7 @@ export default {
     }
     return {value, show, show1, showCode, showCode1}
   },
-  components: {Switch}
+  components: {futureSwitch}
 }
 </script>
 
@@ -216,14 +216,20 @@ export default {
 
       > pre {
         //line-height: 1.1;
-        //font-family: Consolas, "Courier New", Courier, monospace;
+        font-family: Consolas, "Courier New", Courier, monospace;
         //margin: 0;
 
         > .hljs {
           display: block;
-          overflow: auto;
-          padding: 10px 20px;
-          background: #fff;
+          line-height: 1.8;
+          font-family: Menlo,Monaco,Consolas,Courier,monospace;
+          font-size: 12px;
+          padding: 18px 24px;
+          background-color: #fafafa;
+          border: 1px solid #eaeefb;
+          margin-bottom: 25px;
+          border-radius: 4px;
+          -webkit-font-smoothing: auto;
 
           > .hljs-tag {
 
