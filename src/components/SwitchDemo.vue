@@ -7,8 +7,8 @@
 
     <div class="mid">
       <futureSwitch v-model:value="value"
-              activeColor="#409eff"
-              noActiveColor="gray"
+                    activeColor="#409eff"
+                    noActiveColor="gray"
       />
     </div>
     <div class="bottom" @click="showCode">
@@ -49,9 +49,9 @@
 
     <div class="mid">
       <futureSwitch v-model:value="value2"
-              activeColor="#409eff"
-              noActiveColor="gray"
-              disabled
+                    activeColor="#409eff"
+                    noActiveColor="gray"
+                    disabled
       />
     </div>
     <div class="bottom" @click="showCode1">
@@ -112,14 +112,14 @@ export default {
 
 <style scoped lang="scss">
 .title {
-  margin-left: 20px;
+  //margin-left: 20px;
   margin-bottom: 20px;
   font-weight: 600;
   font-size: 36px;
 }
 
 .tips {
-  margin-left: 20px;
+  //margin-left: 20px;
 
   > p {
     font-size: 18px;
@@ -132,13 +132,14 @@ export default {
   display: flex;
   align-items: center;
   padding: 20px 20px 10px 0;
-  margin-left: 20px;
+  //margin-left: 20px;
   margin-top: 20px;
 }
 
 .section1 {
   border: 1px solid #ebebeb;
-  margin: 20px;
+  margin-bottom: 40px;
+  margin-top: 20px;
 
 
   > .mid {
@@ -152,7 +153,7 @@ export default {
   > .bottom {
     font-size: 24px;
     width: 100%;
-    padding: 15px;
+    padding: 10px 24px;
     display: flex;
     align-items: center;
     border-top: 1px solid #ebebeb;
@@ -161,11 +162,10 @@ export default {
       display: flex;
       justify-content: center;
       align-items: center;
-      height: 40px;
-      padding: 8px 12px;
+      padding: 6px 8px;
       border-radius: 12px;
       border: 1px solid #ebebeb;
-      font-size: 18px;
+      font-size: 14px;
     }
 
 
@@ -222,7 +222,7 @@ export default {
         > .hljs {
           display: block;
           line-height: 1.8;
-          font-family: Menlo,Monaco,Consolas,Courier,monospace;
+          font-family: Menlo, Monaco, Consolas, Courier, monospace;
           font-size: 12px;
           padding: 18px 24px;
           background-color: #fafafa;
@@ -230,6 +230,10 @@ export default {
           margin-bottom: 25px;
           border-radius: 4px;
           -webkit-font-smoothing: auto;
+
+          @media (max-width: 500px) {
+            overflow-x: auto;
+          }
 
           > .hljs-tag {
 

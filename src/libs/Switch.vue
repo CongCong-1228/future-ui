@@ -1,6 +1,7 @@
 <template>
   <!--  :class = {checked} === :class = "{checked ? 'checked' : ''}"-->
-  <button :class="{checked:value}"
+  <button  class="fu-switch"
+          :class="{'fu-checked':value}"
           @click="toggle"
           :style="{background: (value ? activeColor : noActiveColor)}"
   >
@@ -40,7 +41,7 @@ export default {
 <style lang="scss" scoped>
 $h: 22px;
 $h2: $h - 4px;
-button {
+.fu-switch {
   height: $h;
   width: $h2*3;
   border: none;
@@ -63,7 +64,7 @@ button {
 
   }
 
-  &.checked {
+  &.fu-checked {
     > span {
       left: calc(100% - 20px);
     }

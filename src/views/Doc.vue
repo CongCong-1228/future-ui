@@ -71,7 +71,11 @@ export default {
 
   > main {
     flex-grow: 1;
-    padding: 16px;
+    padding: 20px 60px;
+    @media(max-width: 500px) {
+      overflow-x: auto;
+      padding: 10px;
+    }
   }
 }
 
@@ -96,7 +100,5 @@ aside {
 
 }
 
-main {
-  overflow-x: auto;
-}
+
 </style>

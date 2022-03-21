@@ -1,7 +1,7 @@
 <template>
-  <button class="future-button"
+  <button class="fu-button"
           :class="classes"
-  ><span v-if="loading"  class="loadingIndicator">
+  ><span class="loadingIndicator">
 
   </span>
     <slot/>
@@ -43,6 +43,7 @@ export default {
       props.round ? 'round' : '',
       props.size,
       props.disabled ? 'disabled' : '',
+      props.loading ? 'loading' : '',
     ]
     return {classes}
   }
@@ -55,7 +56,7 @@ $border-color: #d9d9d9;
 $color: #333;
 $blue: #40a9ff;
 $radius: 4px;
-.future-button {
+.fu-button {
   box-sizing: border-box;
   height: $h;
   padding: 20px;
@@ -70,24 +71,37 @@ $radius: 4px;
   border-radius: $radius;
   box-shadow: 0 1px 0 fade-out(black, 0.95);
 
-  > .loadingIndicator {
-    width: 14px;
-    height: 14px;
-    display: inline-block;
-    margin-right: 4px;
-    border-radius: 8px;
-    border-color: $blue $blue $blue transparent;
-    border-style: solid;
-    border-width: 2px;
-    animation: spin 1s infinite linear;
+  @media (max-width: 500px) {
+    margin-top: 10px;
+    margin-left: 10px;
   }
 
-  @keyframes spin {
-    0% {
-      transform: rotate(0deg)
+  &.loading {
+    &:hover, &:focus {
+      border: 1px solid $border-color;
+      background: white;
+      color: $color;
     }
-    100% {
-      transform: rotate(360deg)
+
+    > .loadingIndicator {
+      width: 14px;
+      height: 14px;
+      display: inline-block;
+      margin-right: 4px;
+      border-radius: 8px;
+      border-color: $blue $blue $blue transparent;
+      border-style: solid;
+      border-width: 2px;
+      animation: spin 1s infinite linear;
+    }
+
+    @keyframes spin {
+      0% {
+        transform: rotate(0deg)
+      }
+      100% {
+        transform: rotate(360deg)
+      }
     }
   }
 

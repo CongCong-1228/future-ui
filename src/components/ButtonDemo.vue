@@ -28,8 +28,8 @@
       <futureButton theme="warning" round>警告按钮</futureButton>
       <futureButton theme="alert" round>危险按钮</futureButton>
     </div>
-    <div class="bottom" @click="showCode">
-      <div class="button">查看代码</div>
+    <div class="bottom">
+      <div class="button" @click="showCode">查看代码</div>
     </div>
     <div class="code" :class="{show}">
       <div class="description">
@@ -97,8 +97,8 @@
 
     </div>
 
-    <div class="bottom" @click="showCode1">
-      <div class="button">查看代码</div>
+    <div class="bottom">
+      <div class="button" @click="showCode1">查看代码</div>
     </div>
     <div class="code" :class="{show1}">
       <div class="description">
@@ -139,8 +139,8 @@
       <futureButton theme="alert" disabled>危险按钮</futureButton>
     </div>
 
-    <div class="bottom" @click="showCode2">
-      <div class="button">查看代码</div>
+    <div class="bottom">
+      <div class="button" @click="showCode2">查看代码</div>
     </div>
     <div class="code" :class="{show2}">
       <div class="description">
@@ -179,8 +179,8 @@
       <futureButton theme="button" loading>加载中</futureButton>
     </div>
 
-    <div class="bottom" @click="showCode3">
-      <div class="button">查看代码</div>
+    <div class="bottom">
+      <div class="button" @click="showCode3">查看代码</div>
     </div>
     <div class="code" :class="{show3}">
       <div class="description">
@@ -231,14 +231,12 @@ export default {
 
 <style lang="scss" scoped>
 .title {
-  margin-left: 20px;
   margin-bottom: 20px;
   font-weight: 600;
   font-size: 36px;
 }
 
 .tips {
-  margin-left: 20px;
 
   > p {
     font-size: 18px;
@@ -251,13 +249,13 @@ export default {
   display: flex;
   align-items: center;
   padding: 20px 20px 10px 0;
-  margin-left: 20px;
   margin-top: 20px;
 }
 
 section {
   border: 1px solid #ebebeb;
-  margin: 20px;
+  margin-bottom: 40px;
+  margin-top: 20px;
 
   > .part {
     margin: 20px 24px;
@@ -279,14 +277,15 @@ section {
       border-radius: 12px;
       border: 1px solid #ebebeb;
       font-size: 14px;
+
+      &:hover {
+        cursor: pointer;
+        color: #409eff;
+
+      }
     }
 
 
-    &:hover {
-      cursor: pointer;
-      color: #409eff;
-
-    }
   }
 
   > .code {
@@ -342,6 +341,9 @@ section {
           margin-bottom: 25px;
           border-radius: 4px;
           -webkit-font-smoothing: auto;
+          @media (max-width: 500px) {
+            overflow-x: auto;
+          }
 
           > .hljs-tag {
 
@@ -383,6 +385,9 @@ section {
           margin-bottom: 25px;
           border-radius: 4px;
           -webkit-font-smoothing: auto;
+          @media (max-width: 500px) {
+            overflow-x: auto;
+          }
 
           > .hljs-tag {
 
@@ -424,6 +429,9 @@ section {
           margin-bottom: 25px;
           border-radius: 4px;
           -webkit-font-smoothing: auto;
+          @media (max-width: 500px) {
+            overflow-x: auto;
+          }
 
           > .hljs-tag {
 
@@ -442,6 +450,7 @@ section {
         }
       }
     }
+
     &.show3 {
       height: 200px;
       //border-top: 1px solid #ebebeb;
@@ -464,6 +473,9 @@ section {
           margin-bottom: 25px;
           border-radius: 4px;
           -webkit-font-smoothing: auto;
+          @media (max-width: 500px) {
+            overflow-x: auto;
+          }
 
           > .hljs-tag {
 
