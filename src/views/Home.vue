@@ -1,13 +1,14 @@
 <template>
   <TopNav/>
-
-  <div class="banner">
-    <h1>Future-UI</h1>
-    <h2>一个厉害的 UI 框架</h2>
-    <p class="actions">
-      <a href="https://github.com/CongCong-1228">GitHub</a>
-      <router-link to="/doc">开始</router-link>
-    </p>
+  <div class="wrapper">
+    <div class="banner">
+      <h1>Future-UI</h1>
+      <h2>一个厉害的 UI 框架</h2>
+      <p class="actions">
+        <a href="https://github.com/CongCong-1228">GitHub</a>
+        <router-link to="/doc">开始</router-link>
+      </p>
+    </div>
   </div>
 </template>
 
@@ -21,26 +22,34 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.banner {
-  padding: 100px 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  background: lightgreen;
+.wrapper {
+  background: rgb(223,144,225);
+  background: radial-gradient(circle, rgba(223,144,225,1) 0%, rgba(102,46,171,1) 100%);
 
-  > .actions {
-    padding: 8px 0;
+  > .banner {
+    color: #dbeef4;
+    padding: 100px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
 
-    a {
-      margin: 0 8px;
-      background: #fff;
-      display: inline-block;
-      $h: 28px;
-      height: $h;
-      line-height: $h;
-      border-radius: $h/2;
-      padding: 0 8px;
+    > .actions {
+      padding: 8px 0;
+
+      a {
+        color: #fff;
+        margin: 0 8px;
+        display: inline-block;
+        border-radius: 4px;
+        padding: 8px 24px;
+        background: rgb(143,84,226);
+        background: linear-gradient(145deg, rgba(143,84,226,1) 0%, rgba(118,62,187,1) 100%);
+        &:hover {
+          text-decoration: none;
+          border: none;
+        }
+      }
     }
   }
 }

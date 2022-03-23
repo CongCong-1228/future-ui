@@ -34,11 +34,12 @@ export default {
   z-index: 10;
   justify-content: center;
   align-items: center;
-  background: #fff;
 
   > .logo {
     max-width: 6em;
     margin-right: auto;
+    color: #dbeef4;
+
   }
 
 
