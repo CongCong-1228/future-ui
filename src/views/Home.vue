@@ -10,6 +10,17 @@
       </p>
     </div>
   </div>
+  <div class="main">
+    <svg class="icon" aria-hidden="true">
+      <use xlink:href="#icon-Vue"></use>
+    </svg>
+    <svg class="icon" aria-hidden="true">
+      <use xlink:href="#icon-ts"></use>
+    </svg>
+    <svg class="icon" aria-hidden="true">
+      <use xlink:href="#icon-lights"></use>
+    </svg>
+  </div>
 </template>
 
 
@@ -23,8 +34,8 @@ export default {
 
 <style lang="scss" scoped>
 .wrapper {
-  background: rgb(223,144,225);
-  background: radial-gradient(circle, rgba(223,144,225,1) 0%, rgba(102,46,171,1) 100%);
+  background: rgb(223, 144, 225);
+  background: radial-gradient(circle, rgba(223, 144, 225, 1) 0%, rgba(102, 46, 171, 1) 100%);
 
   > .banner {
     color: #dbeef4;
@@ -43,14 +54,21 @@ export default {
         display: inline-block;
         border-radius: 4px;
         padding: 8px 24px;
-        background: rgb(143,84,226);
-        background: linear-gradient(145deg, rgba(143,84,226,1) 0%, rgba(118,62,187,1) 100%);
+        background: rgb(143, 84, 226);
+        background: linear-gradient(145deg, rgba(143, 84, 226, 1) 0%, rgba(118, 62, 187, 1) 100%);
+
         &:hover {
           text-decoration: none;
           border: none;
         }
       }
     }
+  }
+}
+.main {
+  >svg {
+    height: 64px;
+    width: 64px;
   }
 }
 </style>

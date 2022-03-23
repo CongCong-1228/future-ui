@@ -1,7 +1,11 @@
 <template>
   <div class="topNav">
-    <span class="toggleAside"  @click="toogleAside"></span>
-    <div class="logo">LOGO</div>
+    <span class="toggleAside" @click="toogleAside"></span>
+    <div class="logo">
+      <svg class="icon" >
+        <use xlink:href="#icon-logo"></use>
+      </svg>
+    </div>
 
   </div>
 </template>
@@ -39,6 +43,10 @@ export default {
     max-width: 6em;
     margin-right: auto;
     color: #dbeef4;
+    >svg {
+      height: 32px;
+      width: 32px;
+    }
 
   }
 
