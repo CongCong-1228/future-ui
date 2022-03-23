@@ -196,6 +196,62 @@
       </code></pre>
     </div>
   </section>
+  <h3>Attributes</h3>
+  <table>
+    <thead>
+    <tr>
+      <th>参数</th>
+      <th>说明</th>
+      <th>类型</th>
+      <th>可选值</th>
+      <th>默认值</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+      <td>size</td>
+      <td>尺寸</td>
+      <td>string</td>
+      <td>bigger / big / normal / small / smaller</td>
+      <td>normal</td>
+    </tr>
+    <tr>
+      <td>theme</td>
+      <td>主题</td>
+      <td>string</td>
+      <td>button / primary / success / info / warning / alert</td>
+      <td>button</td>
+    </tr>
+    <tr>
+      <td>plain</td>
+      <td>是否为朴素按钮</td>
+      <td>boolean</td>
+      <td> —— </td>
+      <td>false</td>
+    </tr>
+    <tr>
+      <td>round</td>
+      <td>是否为圆角按钮</td>
+      <td>boolean</td>
+      <td> —— </td>
+      <td>false</td>
+    </tr>
+    <tr>
+      <td>disabled</td>
+      <td>是否禁用状态</td>
+      <td>boolean</td>
+      <td> —— </td>
+      <td>false</td>
+    </tr>
+    <tr>
+      <td>loading</td>
+      <td>是否加载中状态</td>
+      <td>boolean</td>
+      <td> —— </td>
+      <td>false</td>
+    </tr>
+    </tbody>
+  </table>
 
 
 </template>
@@ -498,5 +554,47 @@ section {
 
 }
 
+h3 {
+  margin: 55px 0 20px;
+  font-weight: 400;
+  color: #1f2f3d;
+  font-size: 22px;
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+  background-color: #fff;
+  font-size: 14px;
+  margin-bottom: 45px;
+  line-height: 1.5em;
+
+  > thead {
+    > tr {
+      > th {
+        text-align: left;
+        white-space: nowrap;
+        color: #909399;
+        font-weight: 400;
+        border-bottom: 1px solid #dcdfe6;
+        padding: 15px;
+        max-width: 250px;
+      }
+    }
+  }
+
+  > tbody {
+    > tr {
+
+      > td {
+        color: #606266;
+        border-bottom: 1px solid #dcdfe6;
+        padding: 15px;
+        max-width: 250px;
+      }
+    }
+  }
+
+}
 
 </style>

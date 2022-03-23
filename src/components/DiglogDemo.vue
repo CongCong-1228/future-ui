@@ -18,8 +18,9 @@
 <span class="hljs-tag"><span class="hljs-name">&lt;futureButton</span> <span class="hljs-name">@click</span>=<span
     class="hljs-attr">toggle</span>&gt;点击打开diolog&lt;<span class="hljs-name">/futureButton&gt;</span></span>
 <span class="hljs-tag"><span class="hljs-name">&lt;futureDialog</span> <span
-          class="hljs-name">v-model:visible</span>=<span
-          class="hljs-attr">visible&gt;</span></span><span class="hljs-tag"><span class="hljs-name">&lt;/futureDialog&gt;</span></span>
+    class="hljs-name">v-model:visible</span>=<span
+    class="hljs-attr">visible&gt;</span></span><span class="hljs-tag"><span
+          class="hljs-name">&lt;/futureDialog&gt;</span></span>
 
 <span class="hljs-tag"><span class="hljs-name">&lt;script&gt;</span></span>
 <span class="hljs-tag"><span class="hljs-name">import FutureButton from fu-button</span>
@@ -99,6 +100,42 @@
       </pre>
     </div>
   </section>
+
+  <h3>Attributes</h3>
+  <table>
+    <thead>
+    <tr>
+      <th>参数</th>
+      <th>说明</th>
+      <th>类型</th>
+      <th>可选值</th>
+      <th>默认值</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+      <td>:visible / v-model</td>
+      <td>是否展示</td>
+      <td>boolean</td>
+      <td>———</td>
+      <td>false</td>
+    </tr>
+    <tr>
+      <td>title</td>
+      <td>自定义标题</td>
+      <td>string</td>
+      <td>———</td>
+      <td>———</td>
+    </tr>
+    <tr>
+      <td>content</td>
+      <td>自定义文本</td>
+      <td>string</td>
+      <td>———</td>
+      <td>———</td>
+    </tr>
+    </tbody>
+  </table>
 
 </template>
 
@@ -263,7 +300,7 @@ section {
     }
 
     &.show1 {
-      height: 400px;
+      height: 700px;
       //border-top: 1px solid #ebebeb;
       > .description {
         display: block;
@@ -307,6 +344,49 @@ section {
     }
   }
 
+
+}
+
+h3 {
+  margin: 55px 0 20px;
+  font-weight: 400;
+  color: #1f2f3d;
+  font-size: 22px;
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+  background-color: #fff;
+  font-size: 14px;
+  margin-bottom: 45px;
+  line-height: 1.5em;
+
+  > thead {
+    > tr {
+      > th {
+        text-align: left;
+        white-space: nowrap;
+        color: #909399;
+        font-weight: 400;
+        border-bottom: 1px solid #dcdfe6;
+        padding: 15px;
+        max-width: 250px;
+      }
+    }
+  }
+
+  > tbody {
+    > tr {
+
+      > td {
+        color: #606266;
+        border-bottom: 1px solid #dcdfe6;
+        padding: 15px;
+        max-width: 250px;
+      }
+    }
+  }
 
 }
 </style>
