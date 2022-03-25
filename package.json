@@ -1,23 +1,23 @@
+
+
 {
   "name": "future-ui",
-  "private": true,
   "version": "0.0.0",
   "scripts": {
     "dev": "vite",
-    "build": "vite build",
-    "preview": "vite preview"
+    "build": "vite build"
   },
   "dependencies": {
-    "esbuild-windows-64": "^0.14.27",
-    "github-markdown-css": "^5.1.0",
-    "vue": "^3.2.25",
-    "vue-router": "^4.0.14"
+    "github-markdown-css": "4.0.0",
+    "marked": "1.1.1",
+    "prismjs": "1.21.0",
+    "vue": "3.2.20",
+    "vue-router": "4.0.0-beta.3"
   },
   "devDependencies": {
-    "@types/node": "^17.0.23",
-    "@vitejs/plugin-vue": "^2.2.0",
-    "marked": "^1.1.1",
-    "sass": "^1.49.9",
-    "vite": "^2.8.0"
+    "@vue/compiler-sfc": "3.2.20",
+    "sass": "1.26.10",
+    "vite": "1.0.0-rc.1",
+    "esbuild": "0.13.4"
   }
 }
