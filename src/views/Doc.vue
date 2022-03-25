@@ -1,22 +1,34 @@
 <template>
 
   <div class="layout">
-    <TopNav class="nav"/>
+    <TopNav class="nav" MenuButton/>
     <div class="content">
       <aside v-if="asideVisible">
-        <h2>组件列表</h2>
+        <h2>Document</h2>
         <ol>
           <li>
-            <router-link to="/doc/switch">Switch 组件</router-link>
+            <router-link to="/doc/intro">Introduce</router-link>
           </li>
           <li>
-            <router-link to="/doc/button">Button 组件</router-link>
+            <router-link to="/doc/install">Install</router-link>
           </li>
           <li>
-            <router-link to="/doc/dialog">Dialog 组件</router-link>
+            <router-link to="/doc/started">Started</router-link>
+          </li>
+        </ol>
+        <h2>Components</h2>
+        <ol>
+          <li>
+            <router-link to="/doc/switch">Switch</router-link>
           </li>
           <li>
-            <router-link to="/doc/tabs">Tabs 组件</router-link>
+            <router-link to="/doc/button">Button</router-link>
+          </li>
+          <li>
+            <router-link to="/doc/dialog">Dialog</router-link>
+          </li>
+          <li>
+            <router-link to="/doc/tabs">Tabs</router-link>
           </li>
         </ol>
       </aside>
@@ -56,9 +68,11 @@ export default {
     flex-grow: 1;
     padding-top: 60px;
     padding-left: 156px;
+
     @media (max-width: 500px) {
       padding-left: 0;
     }
+
   }
 }
 
@@ -80,21 +94,34 @@ export default {
 }
 
 aside {
-  background: lightblue;
   width: 150px;
-  padding: 70px 16px 16px 16px;
+  padding: 70px 0;
   position: fixed;
   top: 0;
   left: 0;
   height: 100%;
+  color: #652c9d;
 
   > h2 {
     margin-bottom: 4px;
+    padding-left: 15px;
   }
 
   > ol {
     > li {
-      padding: 4px 0;
+      padding-left: 15px;
+      > a {
+        display: block;
+        padding: 20px;
+        transition: all .3s;
+        &:hover {
+          font-size: 24px;
+          border-bottom: none;
+        }
+        &.router-link-active {
+          font-size: 24px;
+        }
+      }
     }
   }
 

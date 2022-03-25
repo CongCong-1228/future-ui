@@ -1,12 +1,16 @@
 <template>
   <div class="topNav">
-    <span class="toggleAside" @click="toogleAside"></span>
-    <div class="logo">
-      <svg class="icon" >
+    <span class="toggleAside" @click="toogleAside" v-if="MenuButton"></span>
+    <router-link to="/" class="logo">
+      <svg class="icon">
         <use xlink:href="#icon-logo"></use>
       </svg>
-    </div>
-
+    </router-link>
+    <ul class="menu">
+      <li>
+        <router-link to="/doc">文档</router-link>
+      </li>
+    </ul>
   </div>
 </template>
 
@@ -15,6 +19,12 @@
 import {inject} from "vue";
 
 export default {
+  props: {
+    MenuButton: {
+      type: Boolean,
+      default: false
+    }
+  },
   setup() {
     const asideVisible = inject('asideVisible')
     console.log(asideVisible.value)
@@ -43,10 +53,26 @@ export default {
     max-width: 6em;
     margin-right: auto;
     color: #dbeef4;
-    >svg {
+
+    &:hover {
+      text-decoration: none;
+      border: none;
+    }
+
+    > svg {
       height: 32px;
       width: 32px;
     }
+
+  }
+
+  > .menu {
+    color: #dbeef4;
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    z-index: 20;
+
 
   }
 
@@ -73,5 +99,6 @@ export default {
       display: inline-block;
     }
   }
+
 }
 </style>
