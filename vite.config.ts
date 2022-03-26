@@ -1,14 +1,16 @@
 // @ts-nocheck
 
-import { md } from "./plugins/md";
+import {md} from "./plugins/md";
 import fs from 'fs'
 import {baseParse} from '@vue/compiler-core'
 
 export default {
     plugins: [md()],
+    base: './',
+    assetsDir: 'assets',
     vueCustomBlockTransforms: {
         demo: (options) => {
-            const { code, path } = options
+            const {code, path} = options
             const file = fs.readFileSync(path).toString()
             const parsed = baseParse(file).children.find(n => n.tag === 'demo')
             const title = parsed.children[0].content

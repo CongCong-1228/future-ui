@@ -30,6 +30,9 @@
           <li>
             <router-link to="/doc/tabs">Tabs</router-link>
           </li>
+          <li>
+            <router-link to="/doc/more">More</router-link>
+          </li>
         </ol>
       </aside>
       <main>
@@ -43,12 +46,12 @@
 
 <script lang="ts">
 import TopNav from '../components/TopNav.vue'
-import {ref} from "vue";
+import {inject} from "vue";
 
 export default {
   components: {TopNav},
   setup() {
-    let visible = ref(true)
+    const visible = inject('visible')
     return {visible}
   }
 }
@@ -91,6 +94,7 @@ export default {
     z-index: 1;
     overflow: hidden;
     transition: .3s all;
+
     &.visible {
 
       transform: translateX(0px);
@@ -103,7 +107,7 @@ export default {
 
     > h2 {
       margin-bottom: 4px;
-      padding-left: 15px;
+      padding: 15px;
     }
 
     > ol {

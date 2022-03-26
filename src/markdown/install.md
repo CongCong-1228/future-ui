@@ -8,5 +8,5 @@ yarn add fu-ui
 
 ```
 
-下一节：[开始使用](#/doc/get-started)
+下一节：[开始使用](#/doc/started)
    

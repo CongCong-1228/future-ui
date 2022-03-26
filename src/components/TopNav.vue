@@ -13,7 +13,7 @@
     </router-link>
     <ul class="menu">
       <li>
-        <router-link to="/doc">文档</router-link>
+        <router-link to="/doc/intro">文档</router-link>
       </li>
     </ul>
   </div>
@@ -21,7 +21,7 @@
 
 
 <script lang="ts">
-import {inject, ref} from "vue";
+import {inject} from "vue";
 
 export default {
   props: {
@@ -79,12 +79,16 @@ export default {
   }
 
   > .menu {
-    color: #dbeef4;
+    color: #1e0330;
     position: absolute;
     right: 20px;
     top: 20px;
     z-index: 20;
 
+    &:hover {
+      text-decoration: none;
+
+    }
 
   }
 

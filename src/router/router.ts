@@ -7,6 +7,7 @@ import TabsDemo from '../components/TabsDemo.vue'
 import DialogDemo from '../components/DiglogDemo.vue'
 // @ts-ignore
 import Markdown from '../components/MarkDown.vue'
+import MoreDemo from '../components/MoreDemo.vue'
 import {h} from "vue";
 
 
@@ -27,14 +28,14 @@ export const router = createRouter({
         },
         {
             path: '/doc',
-            component:Doc,
+            component: Doc,
             children: [
                 {path: 'intro', component: md('intro')},
                 {path: 'install', component: md('install')},
                 {path: 'started', component: md('started')},
                 {
                     path: '',
-                    redirect:'doc/intro'
+                    redirect: 'doc/intro'
                 },
                 {
                     path: 'switch',
@@ -52,6 +53,10 @@ export const router = createRouter({
                     path: 'tabs',
                     component: TabsDemo
                 },
+                {
+                    path: 'more',
+                    component: MoreDemo
+                }
             ]
         }
     ]
