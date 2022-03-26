@@ -10,6 +10,5 @@ git init
 git add .
 git commit -m 'deploy'
 git branch -M master
-git remote add origin git@github.com:CongCong-1228/future-ui.git
-git push -f -u origin master
+git push -f git@github.com:CongCong-1228/future-ui.git master:gh-pages
 cd -

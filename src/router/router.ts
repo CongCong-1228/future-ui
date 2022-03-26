@@ -8,15 +8,21 @@ import DialogDemo from '../components/DiglogDemo.vue'
 // @ts-ignore
 import Markdown from '../components/MarkDown.vue'
 import MoreDemo from '../components/MoreDemo.vue'
+// @ts-ignore
+import intro from '../markdown/intro.md'
+// @ts-ignore
+import install from '../markdown/install.md'
+// @ts-ignore
+import started from '../markdown/started.md'
 import {h} from "vue";
 
 
 const history = createWebHashHistory()
 
 // 封装成md函数，只需接受文件名就可以
-const md = (filename) => {
+const md = (string) => {
     return h(Markdown, {
-        path: `../markdown/${filename}.md`, key: filename
+        content: string, key: string
     })
 }
 export const router = createRouter({
@@ -30,9 +36,9 @@ export const router = createRouter({
             path: '/doc',
             component: Doc,
             children: [
-                {path: 'intro', component: md('intro')},
-                {path: 'install', component: md('install')},
-                {path: 'started', component: md('started')},
+                {path: 'intro', component: md(intro)},
+                {path: 'install', component: md(install)},
+                {path: 'started', component: md(started)},
                 {
                     path: '',
                     redirect: 'doc/intro'

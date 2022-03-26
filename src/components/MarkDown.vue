@@ -10,7 +10,7 @@
 import {ref} from "vue";
 export default {
   props: {
-    path: {
+    content: {
       type: String,
       default: null
     }
@@ -20,7 +20,7 @@ export default {
 
     // 使用import动态引入路径，是一个异步任务，一开始会白屏
 
-    import(props.path).then(result => {
+    import(props.content).then(result => {
       content.value = result.default
     })
     return {content}
