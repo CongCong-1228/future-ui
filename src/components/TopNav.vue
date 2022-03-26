@@ -1,6 +1,11 @@
 <template>
   <div class="topNav">
-    <span class="toggleAside" @click="toogleAside" v-if="MenuButton"></span>
+
+    <svg class="toggleAside icon" @click="aside" v-if="MenuButton"
+         style="height: 32px; width: 32px">
+      <use xlink:href="#icon-list"></use>
+    </svg>
+
     <router-link to="/" class="logo">
       <svg class="icon">
         <use xlink:href="#icon-logo"></use>
@@ -16,23 +21,30 @@
 
 
 <script lang="ts">
-import {inject} from "vue";
+import {inject, ref} from "vue";
 
 export default {
   props: {
     MenuButton: {
       type: Boolean,
       default: false
+    },
+    visible: {
+      type: Boolean,
+      default: false,
     }
   },
-  setup() {
+  setup(props, context) {
     const asideVisible = inject('asideVisible')
-    console.log(asideVisible.value)
+
     const toogleAside = () => {
       asideVisible.value = !asideVisible.value
-      console.log(asideVisible.value)
     }
-    return {toogleAside}
+    const aside = () => {
+      let x = !props.visible
+      context.emit('update:visible', x)
+    }
+    return {toogleAside, aside}
   }
 }
 </script>
@@ -45,7 +57,7 @@ export default {
   top: 0;
   left: 0;
   width: 100%;
-  z-index: 10;
+  z-index: 20;
   justify-content: center;
   align-items: center;
 
@@ -81,7 +93,6 @@ export default {
     display: none;
     width: 24px;
     height: 24px;
-    background: red;
     position: absolute;
     left: 16px;
     top: 50%;

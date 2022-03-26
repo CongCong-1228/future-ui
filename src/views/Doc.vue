@@ -1,9 +1,9 @@
 <template>
 
   <div class="layout">
-    <TopNav class="nav" MenuButton/>
+    <TopNav class="nav" MenuButton v-model:visible="visible"/>
     <div class="content">
-      <aside v-if="asideVisible">
+      <aside ref="container" :class="visible?'visible':''">
         <h2>Document</h2>
         <ol>
           <li>
@@ -41,15 +41,15 @@
 </template>
 
 
-<script>
+<script lang="ts">
 import TopNav from '../components/TopNav.vue'
-import {inject} from "vue";
+import {ref} from "vue";
 
 export default {
   components: {TopNav},
   setup() {
-    const asideVisible = inject('asideVisible')
-    return {asideVisible}
+    let visible = ref(true)
+    return {visible}
   }
 }
 </script>
@@ -79,8 +79,54 @@ export default {
 .content {
   display: flex;
 
-  > aside {
-    flex-shrink: 0;
+  >
+  aside {
+    padding: 70px 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    color: #652c9d;
+    background: #ffe3f9;
+    z-index: 1;
+    overflow: hidden;
+    transition: .3s all;
+    &.visible {
+
+      transform: translateX(0px);
+    }
+
+    @media(max-width: 500px) {
+      transform: translateX(-170px);
+
+    }
+
+    > h2 {
+      margin-bottom: 4px;
+      padding-left: 15px;
+    }
+
+    > ol {
+      > li {
+        padding-left: 15px;
+
+        > a {
+          display: block;
+          padding: 20px;
+          transition: all .3s;
+
+          &:hover {
+            font-size: 24px;
+            border-bottom: none;
+          }
+
+          &.router-link-active {
+            font-size: 24px;
+          }
+        }
+      }
+    }
+
   }
 
   > main {
@@ -91,40 +137,6 @@ export default {
       padding: 10px;
     }
   }
-}
-
-aside {
-  width: 150px;
-  padding: 70px 0;
-  position: fixed;
-  top: 0;
-  left: 0;
-  height: 100%;
-  color: #652c9d;
-
-  > h2 {
-    margin-bottom: 4px;
-    padding-left: 15px;
-  }
-
-  > ol {
-    > li {
-      padding-left: 15px;
-      > a {
-        display: block;
-        padding: 20px;
-        transition: all .3s;
-        &:hover {
-          font-size: 24px;
-          border-bottom: none;
-        }
-        &.router-link-active {
-          font-size: 24px;
-        }
-      }
-    }
-  }
-
 }
 
 

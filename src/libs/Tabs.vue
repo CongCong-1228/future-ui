@@ -39,6 +39,7 @@ export default {
     const itemRefs = ref<HTMLDivElement[]>([])
     const indicator = ref<HTMLDivElement>(null)
     const container = ref<HTMLDivElement>(null)
+    console.log(container)
     const classes = []
     // ref配合v-for获取dom元素数组
     const setItemRef = (el) => {

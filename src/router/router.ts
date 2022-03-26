@@ -1,18 +1,23 @@
 import {createWebHashHistory, createRouter} from 'vue-router'
 import Home from '../views/Home.vue'
 import Doc from '../views/Doc.vue'
-import Intro from '../views/Intro.vue'
-import Install from '../views/Install.vue'
-import Started from '../views/Started.vue'
 import SwitchDemo from '../components/SwitchDemo.vue'
 import ButtonDemo from '../components/ButtonDemo.vue'
 import TabsDemo from '../components/TabsDemo.vue'
 import DialogDemo from '../components/DiglogDemo.vue'
 // @ts-ignore
-import DocDemo from '../components/DocDemo.vue'
+import Markdown from '../components/MarkDown.vue'
+import {h} from "vue";
 
 
 const history = createWebHashHistory()
+
+// 封装成md函数，只需接受文件名就可以
+const md = (filename) => {
+    return h(Markdown, {
+        path: `../markdown/${filename}.md`, key: filename
+    })
+}
 export const router = createRouter({
     history,
     routes: [
@@ -22,14 +27,14 @@ export const router = createRouter({
         },
         {
             path: '/doc',
-            component: Doc,
+            component:Doc,
             children: [
-                {path:'intro',component:Intro},
-                {path:'install',component:Install},
-                {path:'started',component:Started},
+                {path: 'intro', component: md('intro')},
+                {path: 'install', component: md('install')},
+                {path: 'started', component: md('started')},
                 {
                     path: '',
-                    component: DocDemo
+                    redirect:'doc/intro'
                 },
                 {
                     path: 'switch',
